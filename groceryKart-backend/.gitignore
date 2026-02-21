@@ -1,1 +1,5 @@
 node_modules
+.env
+*.url
+*.lnk
+desktop.ini
