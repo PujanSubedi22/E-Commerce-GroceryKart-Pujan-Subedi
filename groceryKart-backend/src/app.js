@@ -1,10 +1,11 @@
 import express from "express";
-import dotenv from "dotenv";
 import config from "./config/config.js";
-
+import productRoute from "./routes/product.route.js";
+import bodyParser from "body-parser";
 
 const app = express();
 
+app.use(bodyParser.json());
 
 app.get("/", (req, res)=> {
     res.json({
@@ -15,6 +16,8 @@ app.get("/", (req, res)=> {
     });
 });
 
+app.use("/api/products", productRoute);
+
 app.listen(config.port, () => {
-    console.log(`Server is running...at port ${config.port}`);
+    console.log(`Server is running at port ${config.port}`);
 });
