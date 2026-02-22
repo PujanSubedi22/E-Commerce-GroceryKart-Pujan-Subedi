@@ -3,8 +3,8 @@ import config from "./config.js";
 
 async function connectDB(){
     try {
-       await mongoose.connect(config.mongodbUrl)
-    console.log("Mongodb connected sucessfully");
+      const status=  await mongoose.connect(config.mongodbUrl)
+    console.log(`Mongodb connected sucessfully :${status.connection.host}`);
 
 } catch (error) {
         console.log(error);
