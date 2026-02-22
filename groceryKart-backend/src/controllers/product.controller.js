@@ -1,35 +1,60 @@
 import productService from "../services/product.service.js";
 
-const getProducts = (req, res) => {
+const getProducts = async (req, res) => {
+  const query = req.query;
 
-    const query = req.query;
-
-    const data = productService.getProducts(query);
-    res.json(data)
+  const data = await productService.getProducts(query);
+  res.json(data);
 };
 
-const getProductById = (req, res) => {
-    const id = req.params.id;
+const getProductById = async (req, res) => {
+  const id = req.params.id;
 
-    const data = productService.getProductById(id);
-
-    if (!data) return res.status(404).send("Product not found");
+  try {
+    const data = await productService.getProductById(id);
     res.json(data);
+  } catch (error) {
+    res.status(error.status || 400).send(error.message);
+  }
 };
 
-const createProduct = (req, res) => {
-
-    productService.createProduct(req.body)
-
-    res.status(201).send("Product created. ");
+const createProduct = async (req, res) => {
+  try {
+    const createProduct = await productService.createProduct(req.body);
+    res.status(201).json(createProduct);
+  } catch (error) {
+    res.status(400).send(error?.message);
+  }
 };
 
+const deleteProduct = async (req, res) => {
+  try {
+    await productService.deleteProduct(req.params.id);
 
+    res.json({ message: "Product deleted successfuly.", id: req.params.id });
+  } catch (error) {
+    res.status(error.status || 400).send(error?.message);
+  }
+};
 
-
+const updateProduct = async (req, res) => {
+  try {
+    const updatedProduct = await productService.updateProduct(
+      req.params.id,
+      req.body,
+    );
+    res
+      .status(200)
+      .json({ message: "Product updated successfully.", updatedProduct });
+  } catch (error) {
+    res.status(error.message || 400).send(error?.message);
+  }
+};
 
 export default {
-    getProducts,
-    getProductById,
-    createProduct
-}
+  getProducts,
+  getProductById,
+  createProduct,
+  deleteProduct,
+  updateProduct,
+};
