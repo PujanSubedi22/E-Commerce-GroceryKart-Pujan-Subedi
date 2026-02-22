@@ -2,8 +2,12 @@ import express from "express";
 import config from "./config/config.js";
 import productRoute from "./routes/product.route.js";
 import bodyParser from "body-parser";
+import connectDB from "./config/database.js";
 
 const app = express();
+
+connectDB();
+
 
 app.use(bodyParser.json());
 
