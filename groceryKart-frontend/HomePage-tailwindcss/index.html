@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroceryKart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#15803d",
+            secondary: "#22c55e",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body>
+  <div class="w-full text-center py-1 text-white bg-green-900">Notice</div>
+  <header class="w-full bg-green-300 sticky top-0 shadow z-50">
+    <div class="container mx-auto py-3 px-4">
+      <div class="flex items center justify-between">
+        <!--Logo-->
+        <h1 class="text-xl font-semibold text-primary">
+          <a href="#">GroceryKart</a>
+        </h1>
+
+        <!--navbar-->
+        <nav class="hidden md:flex gap-5">
+          <a href="#" class="text-green-700 font-medium hover:text-green-500">
+            Home</a>
+          <a href="#" class="text-green-700 font-medium hover:text-green-500">
+            Product</a>
+          <a href="#" class="text-green-700 font-medium hover:text-green-500">
+            AboutUs</a>
+          <a href="#" class="text-green-700 font-medium hover:text-green-500">
+            Contact</a>
+          <a href="#" class="text-green-700 font-medium hover:text-green-500">
+            Services</a>
+          <a href="#" class="text-green-700 font-medium hover:text-green-500">
+            Contact</a>
+        </nav>
+
+        <div class="flex items-center">
+          <button class="text-green-700 p-1 hover:text-green-500">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+          <button class="text-green-700 p-1 hover:text-green-500">
+            <i class="fas fa-user"></i>
+          </button>
+          <button class="block md:hidden text-green-700 p-1 hover:text-green-500">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section class="py-12 bg-gradient-to-r from-green-100 to-green-200">
+      <div class="container mx-auto px-4">
+        <!-- Hero content -->
+        <div class="flex flex-col md:flex-row item-center gap-4">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Fresh <span class="text-primary">Groceries</span> Items
+            </h1>
+            <p class="text-lg text-gray-600 mb-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et cum
+              pariatur provident eveniet quisquam numquam, tenetur eius, iure
+              error eum repellat? Ipsum excepturi laudantium, saepe alias
+              harum exercitationem? Dolores, laboriosam!
+            </p>
+
+            <div class="flex space-x-4">
+              <button
+                class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-primary font-medium transition duration-300">
+                Shop Now
+              </button>
+              <button
+                class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-primary font-medium transition duration-300">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img class="rounded-2xl shadow-lg-h-90 object-cover" src="./assets/images/image.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  Why choose us section -->
+    <section class="py-12">
+      <div class="container mx-auto px-4 py-12">
+        <h2 class="text-center text-3xl font-bold text-green-800 mb-12">
+          Why Shop with Us
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-green-100 flex flex-col items-center text-center p-6 rounded-xl shadow-sm hover:shadow-md hover:scale-105 transition-transform duration-300">
+            <div class="bg-primary/10 rounded-full flex items-center justify-center h-16 w-16 mb-2">
+              <i class="fas fa-shipping-fast text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">Free Shipping</h3>
+            <p class="text-sm text-gray-600"> Free Shipping for all orders over Rs.500.
+              Fast delivery service to your doorstep.
+            </p>
+          </div>
+          <div class="bg-green-100 flex flex-col items-center text-center p-6 rounded-xl shadow-sm hover:scale-105 transition-transform duration-300"">
+            <div class=" bg-primary/10 rounded-full flex items-center justify-center h-16 w-16 mb-2">
+            <i class="fas fa-credit-card text-2xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-700 mb-2">Secure Payment</h3>
+          <p class="text-sm text-gray-600"> Your payment information is safe with our encrypted system.
+          </p>
+        </div>
+        <div class="bg-green-100 flex flex-col items-center text-center p-6 rounded-xl shadow-sm hover:scale-105 transition-transform duration-300"">
+            <div class=" bg-primary/10 rounded-full flex items-center justify-center h-16 w-16 mb-2">
+          <i class="fas fa-headset text-2xl text-primary"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">24/7 Support</h3>
+        <p class="text-sm text-gray-600">Our customer support team is available around the clock to help you..
+        </p>
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <!--Popular products section-->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-3xl font-bold text-green-800">Popular Products</h2>
+          <a href="#" class="text-green-800 hover:text-green-500">View all</a>
+        </div>
+        <div class="grid grid-cols1 sm:grid-cols-2 lg:grid:cols-3 xl:grid-cols-4 gap-6">
+
+          <!--Card-->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:translate-y-1 transition duration-300">
+            <div class="relative">
+              <img
+                src="https://5.imimg.com/data5/SELLER/Default/2022/12/PI/YB/IP/99340694/img-20221216-wa0070-1000x1000.jpg"
+                alt="" class="w-full h-48 object-cover" />
+              <span class=" absolute top-3 right-3 bg-red-500 text-white text-xs font-medium px-1 py-1 rounded-xl">
+                20%Off
+              </span>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-gray-800 mb-1">
+                Millet Noodles</h3>
+              <div class="flex mb-2 item-center">
+                <div class="flex text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class=" text-sm ml-2 text-gray-500">(43)</span>
+              </div>
+              <div class="flex justify-between items center">
+                <div class="div">
+                  <span class="text-lg font-semibold text-gray-900">$99</span>
+                  <span class="text-sm text-gray-500 line-through ml-l">$130</span>
+                </div>
+                <button class="bg-green-500 text-white hover:bg-green-700 px-2 py-1.5 rounded-full">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:translate-y-1 transition duration-300">
+            <div class="relative">
+              <img src="https://mallko.store/cdn/shop/products/hotandspicylapsipickle.jpg?v=1616948860&width=620" alt=""
+                class="w-full h-48 object-cover" />
+              <span class=" absolute top-3 right-3 bg-red-500 text-white text-xs font-medium px-2 py-1 rounded-xl">
+                Sale
+              </span>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-gray-800 mb-1">
+                Aama Ko Achar -
+                Lapsi Pickle</h3>
+              <div class="flex mb-2 item-center">
+                <div class="flex text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half"></i>
+                </div>
+                <span class=" text-sm ml-2 text-gray-500">(112)</span>
+              </div>
+              <div class="flex justify-between items center">
+                <div class="div">
+                  <span class="text-lg font-semibold text-gray-900">$23</span>
+                  <span class="text-sm text-gray-500 line-through ml-l">$55</span>
+                </div>
+                <button class="bg-green-500 text-white hover:bg-green-700 px-2 py-1.5 rounded-full">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:translate-y-1 transition duration-300">
+            <div class="relative">
+              <img src="https://mad-honey.store/wp-content/uploads/2024/08/61352d181429447.651c115f6df4f-copy.jpg"
+                alt="" class="w-full h-48 object-cover" />
+              <span class=" absolute top-3 right-3 bg-red-500 text-white text-xs font-medium px-1 py-1 rounded-xl">
+                Sale
+              </span>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-gray-800 mb-1">
+                CLINICAL MAD HONEY </h3>
+              <div class="flex mb-2 item-center">
+                <div class="flex text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class=" text-sm ml-2 text-gray-500">(1K)</span>
+              </div>
+              <div class="flex justify-between items center">
+                <div class="div">
+                  <span class="text-lg font-semibold text-gray-900">$220</span>
+                  <span class="text-sm text-gray-500 line-through ml-l">$300</span>
+                </div>
+                <button class="bg-green-500 text-white hover:bg-green-700 px-2 py-1.5 rounded-full">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!--Card-->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden hover:translate-y-1 transition duration-300">
+            <div class="relative">
+              <img
+                src="https://www.truestoryorganics.com/wp-content/uploads/2023/12/true-story-organic-basmati-rice-packet-and-organic-basmati-rice-in-bowl.jpg"
+                alt="" class="w-full h-48 object-cover" />
+              <span class=" absolute top-3 right-3 bg-red-500 text-white text-xs font-medium px-2 py-1 rounded-xl">
+                Sale
+              </span>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-gray-800 mb-1">
+                Organic Basmati Rice </h3>
+              <div class="flex mb-2 item-center">
+                <div class="flex text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class=" text-sm ml-2 text-gray-500">(43)</span>
+              </div>
+              <div class="flex justify-between items center">
+                <div class="div">
+                  <span class="text-lg font-semibold text-gray-900">Rs 3000</span>
+                  <span class="text-sm text-gray-500 line-through ml-l">Rs 6200</span>
+                </div>
+                <button class="bg-green-500 text-white hover:bg-green-700 px-2 py-1.5 rounded-full">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Seller-->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="bg-gradient-to-r from-green-700 to-green-400  rounded-2xl shadow-xl overflow-hidden">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 flex flex-col justify-center p-8 lg:p-12">
+              <span class="bg-gray-200 bg-opacity-20 rounded-2xl w-max px-4 py-1 text-xs text-white font-medium">
+                Features Product</span>
+              <h2 class="text-3xl font-bold text-white mb-4 mt-2">
+                Coke Original Taste </h2>
+              <p class="text-green-100 mb-6">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+                laboriosam necessitatibus corrupti amet est architecto harum eaque provident,
+                quibusdam ab ut molestias soluta vitae tempore
+                reiciendis ducimus ex eos aut!</p>
+              <div class="flex mb-4 item-center">
+                <div class="flex text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="text-sm ml-2 text-gray-200"> 5/5 from 1,500 reviews</span>
+
+              </div>
+              <div class="flex  items center space-x-4">
+                <span class="text-3xl font-semibold text-white">$299</span>
+                <span class="text-xl text-gray-200 line-through ml-l">$319</span>
+                <span class="bg-orange-400 text-white text-sm font-semibold px-2 py-1 rounded"> 20% OFF</span>
+
+              </div>
+              <div class="flex space-x-4 mt-8">
+                <button
+                  class=" border border:white bg-gray-50 text-green-900 hover:bg-green-700 hover:text-white px-6 py-2 rounded-lg font-semibold transition duration-300">
+                  Buy Now<i class="fas fa-shopping-cart"></i>
+                </button>
+                <button
+                  class=" border border:white text-white hover:bg-white hover:text-green-900 px-6 py-2 rounded-lg font-semibold transition duration-300">
+                  Learn More
+                </button>
+              </div>
+            </div>
+            <div class="md:w-1/2 flex items-center justify-center p-8">
+              <img src="https://storage.googleapis.com/afs-prod/media/1f7cc5d9b98e4cdea8bad06e3f94d340/3000.jpeg?w=800"
+                alt="" class="w-full max-w-md">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Testimonials-->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-green-800 mb-12">
+          What Our Customers Say</h2>
+
+        <!--Main Grid-->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!--card 1-->
+          <div class="bg-white p-6 rounded-xl shadow">
+            <div class="flex items-center mb-4 space-x-4">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=128 " alt=""
+                class=" h-12 w-12 rounded-full object-cover" />
+              <div>
+                <h4 class="font-medium text-xl text-gray-800">
+                  John Doe</h4>
+
+                <div class="flex text-yellow-500 text-sm ">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-justify">
+              The quality of products is amazing. Fast delivery and excellent customer support.
+            </p>
+          </div>
+
+          <!--card 1-->
+          <div class="bg-white p-6 rounded-xl shadow">
+            <div class="flex items-center mb-4 space-x-4">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=128 " alt=""
+                class=" h-12 w-12 rounded-full object-cover" />
+              <div>
+                <h4 class="font-medium text-xl text-gray-800">
+                  John Doe</h4>
+
+                <div class="flex text-yellow-500 text-sm ">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-justify">
+              Great prices and fresh products. Highly recommended!</p>
+          </div>
+
+          <!--card 1-->
+          <div class="bg-white p-6 rounded-xl shadow">
+            <div class="flex items-center mb-4 space-x-4">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=128 " alt=""
+                class=" h-12 w-12 rounded-full object-cover" />
+              <div>
+                <h4 class="font-medium text-xl text-gray-800">
+                  John Doe</h4>
+
+                <div class="flex text-yellow-500 text-sm ">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+
+              </div>
+            </div>
+
+            <p class="text-gray-600 text-justify">
+              Very smooth shopping experience. I will definitely order again..</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!--Call to Action-->
+    <section class="bg-green-300 py-12">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-green-900 mb-4">
+          Stay updated with GroceryKart Products.</h2>
+
+        <p class="text-gray=200 max-w-2xl mx-auto mb-6">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, velit?
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, velit?
+
+        </p>
+
+        <div class="flex mx-auto max-w-md">
+          <input type="email" placeholder="Your email address"
+            class="rounded-l-lg  px-4 py-3 focus:outline-none flex-grow" />
+          <button
+            class="bg-green-500 rounded-r-lg text-green-900 px-6 py-3 font-medium hover:bg-green-600 transition duration-300">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--Contact -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-green-800 mb-12">
+          Get In Touch</h2>
+
+
+        <div class=" grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-8">
+              Contact Information</h3>
+
+            <!-- contact infromation-->
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="bg-green-500 bg-opacity-10 px-3 rounded-full mr-4">
+                  <i class="fas fa-map-marker-alt text-green-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium tex-gray-800 ">Our Location</h4>
+                  <p class="text-gray-600">Baglung,Galkot-5,Harichaur</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-green-500 bg-opacity-10 px-3 rounded-full mr-4">
+                  <i class="fas fa-phone text-green-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium tex-gray-800 "></h4>Phone number
+                  <p class="text-gray-600">9816668863, 061-246891</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-green-500 bg-opacity-10 px-3 rounded-full mr-4">
+                  <i class="fas fa-envelope text-green-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium tex-gray-800 ">Email address</h4>
+                  <p class="text-gray-600">info@GroceryKart.com.np</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-green-500 bg-opacity-10 px-3 rounded-full mr-4">
+                  <i class="fas fa-envelope text-green-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium tex-gray-800 ">Working hours</h4>
+                  <p class="text-gray-600">Sun-Fri 9:00AM - 6:00PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">
+              Send Us a Message
+            </h3>
+
+            <form action="" class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                    Your Name</label>
+
+                  <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300
+                     rounded-lg focus:outline-primary" />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                    Your Email Address</label>
+
+                  <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300
+                     rounded-lg focus:outline-primary" />
+                </div>
+              </div>
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">
+                  Subject</label>
+
+                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300
+                     rounded-lg focus:outline-primary" />
+              </div>
+
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">
+                  Message</label>
+
+                <textarea name="Message" id="message" rows="5" class="w-full px-4 py-2 border border-gray-300
+                     rounded-lg focus:outline-primary"></textarea>
+              </div>
+
+              <button type="submit"
+                class="bg-green-500 hover:bg-primary text-white rounded-lg px-8 py-3 font-medium transition duration-300">Send
+                Message</button>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--footer-->
+  <footer class="bg-green-700 text-white pt-12 pb-6">
+
+    <div class="container mx-auto px-4">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="text-xl font-semibold">
+            GroceryKart
+          </h4>
+          <p class="text-gray-200 mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sunt
+            voluptates praesentium iste nisi magni numquam nostrum porro nulla voluptatum quaerat atque repudiandae!
+          </p>
+
+       
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-200 hover:text-white transition duration-300">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-gray-200 hover:text-white transition duration-300">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-200 hover:text-white transition duration-300">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="text-gray-200 hover:text-white transition duration-300">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">
+            Quick links
+          </h4>
+          <div class="flex flex-col space-y-2">
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">Home</a>
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">About</a>
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">Products</a>
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">Blogs</a>
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">
+            Customer Service </h4>
+            <div class="flex flex-col space-y-2">
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">FAQs</a>
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">Privacy Policy</a>
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">Terms of Service</a>
+            <a href="#" class="text-white hover:text-gray-300 transition duration-300">Support Center</a>
+
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">
+            We Accept </h4>
+            <div class="flex gap-2">
+            <div class="bg-green-100 px-2 py-1 rounded">
+              <i class="fab fa-cc-visa text-2xl text-green-800"></i>
+            </div>
+            <div class="bg-green-100 px-2 py-1 rounded">
+              <i class="fab fa-cc-mastercard text-2xl text-green-800"></i>
+            </div>
+            <div class="bg-green-100 px-2 py-1 rounded">
+              <i class="fab fa-cc-paypal text-2xl text-green-800"></i>
+            </div>
+            <div class="bg-green-100 px-2 py-1 rounded">
+              <i class="fab fa-cc-apple-pay text-2xl text-green-800"></i>
+            </div>
+      </div>
+
+
+      
+      <p class="text-center  pt-8 text-gray-200">
+        &copy; 2026 GroceryKart. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
