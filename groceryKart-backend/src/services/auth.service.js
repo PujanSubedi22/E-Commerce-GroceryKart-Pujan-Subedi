@@ -1,10 +1,11 @@
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
+import { createJWT } from "../utils/jwt.js";
 
 const login = async (data) => {
   const user = await User.findOne({
     $or: [{ email: data?.email }, { phone: data?.phone }],
-});
+  });
 
   if (!user)
     throw {
@@ -20,7 +21,15 @@ const login = async (data) => {
       message: "Incorrect email or password",
     };
 
-  return user;
+  return{
+    _id: user._id,
+    address: user.address,
+    name: user.name,
+    email: user.email,
+    roles: user.roles,
+    phone: user.phone,
+    isActive: user.isActive,
+  };
 };
 
 const register = async (data) => {
@@ -37,13 +46,23 @@ const register = async (data) => {
   const salt = bcrypt.genSaltSync(10);
   const hashedPassword = bcrypt.hashSync(data.password, salt);
 
-  return await User.create({
+ const createdUser =  await User.create({
     name: data.name,
     email: data.email,
     phone: data.phone,
     address: data.address,
     password: hashedPassword,
   });
-};
+
+  return {
+      _id: createdUser._id,
+    address: createdUser.address,
+    name: createdUser.name,
+    email: createdUser.email,
+    roles: createdUser.roles,
+    phone: createdUser.phone,
+    isActive: createdUser.isActive,
+  };
+  };
 
 export default { register, login };
