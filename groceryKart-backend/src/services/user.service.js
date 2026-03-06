@@ -5,4 +5,10 @@ const createUser = async (data)=> {
 
 }
 
-export default { createUser}
+
+const getUser = async ()=> {
+   return  await User.find()
+
+}
+
+export default { createUser , getUser}

@@ -1,5 +1,4 @@
 import productService from "../services/product.service.js";
-import { verifyJWT } from "../utils/jwt.js";
 
 const getProducts = async (req, res) => {
   const query = req.query;
@@ -20,12 +19,8 @@ const getProductById = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
-  const cookie = req.headers.cookie;
-
-  const token = cookie.split("=")[1];
 
   try {
-    const result = await verifyJWT(token);
 
     const createProduct = await productService.createProduct(req.body);
     res.status(201).json(createProduct);

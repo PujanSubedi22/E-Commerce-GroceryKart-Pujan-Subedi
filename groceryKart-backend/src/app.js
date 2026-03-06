@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import connectDB from "./config/database.js";
 import userRoute from "./routes/user.route.js";
 import authRoute from "./routes/auth.route.js";
+import logger from "./middlewares/logger.js";
 
 
 
@@ -14,6 +15,8 @@ connectDB();
 
 
 app.use(bodyParser.json());
+
+app.use(logger);
 
 app.get("/", (req, res)=> {
     res.json({
