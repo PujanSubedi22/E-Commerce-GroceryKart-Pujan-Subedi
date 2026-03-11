@@ -4,6 +4,8 @@ import auth from "../middlewares/auth.js";
 import validate from "../middlewares/validator.js";
 import roleBasedAuth from "../middlewares/roleBasedAuth.js";
 import { ROLE_ADMIN } from "../constants/roles.js";
+import { userSchema } from "../libs/schemas/user.js";
+
 
 const router = express.Router()
 

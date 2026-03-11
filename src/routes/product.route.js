@@ -3,7 +3,8 @@ import productController from "../controllers/product.controller.js";
 import auth from "../middlewares/auth.js";
 import roleBasedAuth from "../middlewares/roleBasedAuth.js";
 import { ROLE_MERCHANT } from "../constants/roles.js";
-import validate from "../libs/schemas/product.js";
+import {productSchema} from "../libs/schemas/product.js";
+import validate from "../middlewares/validator.js";
 
 const router = express.Router();
 

@@ -6,11 +6,12 @@ const validate = (schema) => (req, res, next) => {
         next();
     } catch (error) {
         if (error instanceof ZodError) {
-            // Note: You had z.treeifyError(error) here, 
-            // but standard Zod uses error.format() or error.flatten()
-            const formattedError = error.format();
+            
+            const formattedError = z.treeifyError(error);
+
             console.error(formattedError);
-            return res.status(400).json(formattedError);
+
+             res.status(400).json(formattedError);
         }
         next(error);
     }
